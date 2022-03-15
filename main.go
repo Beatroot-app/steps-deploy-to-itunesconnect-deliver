@@ -35,6 +35,8 @@ type Config struct {
 
 	AppID                string `env:"app_id"`
 	BundleID             string `env:"bundle_id"`
+	AppVersion           string `env:"app_version"`
+	BuildNumber          string `env:"build_number"`
 	SubmitForReview      string `env:"submit_for_review,opt[yes,no]"`
 	SkipBinaryUpload     string `env:"skip_binary_upload,opt[yes,no]"`
 	SkipMetadata         string `env:"skip_metadata,opt[yes,no]"`
@@ -415,6 +417,14 @@ alphanumeric characters.`)
 		}
 	} else if cfg.BundleID != "" {
 		args = append(args, "--app_identifier", cfg.BundleID)
+	}
+
+	if cfg.AppVersion != "" {
+		args = append(args, "--app_version", cfg.AppVersion)
+	}
+
+	if cfg.BuildNumber != "" {
+		args = append(args, "--build_number", cfg.BuildNumber)
 	}
 
 	if cfg.TeamName != "" {

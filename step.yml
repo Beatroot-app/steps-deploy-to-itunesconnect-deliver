@@ -182,6 +182,18 @@ inputs:
     description: |-
       The app's *Bundle ID* on App Store Connect.
       **NOTE:** This input or the **App Store Connect App ID** is required.
+- app_version: ""
+  opts:
+    title: App Version
+    description: |-
+      The version that should be edited or created.
+      **NOTE:** This input is required when Skipped binary upload. Prefer leaving it empty when uploading a binary.
+- build_number: ""
+  opts:
+    title: Build number
+    description: |-
+      If set the given build number (already uploaded to iTC) will be used instead of the current built one
+      **NOTE:** This input is required when Skipped binary upload. Prefer leaving it empty when uploading a binary.
 - submit_for_review: "no"
   opts:
     title: Submit for Review?
