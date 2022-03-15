@@ -36,6 +36,7 @@ type Config struct {
 	AppID                string `env:"app_id"`
 	BundleID             string `env:"bundle_id"`
 	SubmitForReview      string `env:"submit_for_review,opt[yes,no]"`
+	SkipBinaryUpload     string `env:"skip_binary_upload,opt[yes,no]"`
 	SkipMetadata         string `env:"skip_metadata,opt[yes,no]"`
 	SkipScreenshots      string `env:"skip_screenshots,opt[yes,no]"`
 	SkipAppVersionUpdate string `env:"skip_app_version_update,opt[yes,no]"`
@@ -442,6 +443,10 @@ alphanumeric characters.`)
 			tmpPkgPath = cfg.PkgPath
 		}
 		args = append(args, "--pkg", tmpPkgPath)
+	}
+
+	if cfg.SkipBinaryUpload == "yes" {
+		args = append(args, "--skip_binary_upload")
 	}
 
 	if cfg.SkipScreenshots == "yes" {

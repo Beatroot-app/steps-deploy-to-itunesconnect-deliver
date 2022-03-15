@@ -198,6 +198,14 @@ inputs:
     - "yes"
     - "no"
     is_required: true
+- skip_binary_upload: "no"
+  opts:
+    title: Skip binary upload?
+    description: Skip uploading an ipa or pkg to App Store Connect.
+    value_options:
+    - "yes"
+    - "no"
+    is_required: true
 - skip_metadata: "yes"
   opts:
     title: Skip metadata?
