@@ -245,7 +245,7 @@ func ensureFastlaneVersionAndCreateCmdSlice(forceVersion, gemfilePth string) ([]
 }
 
 func (cfg Config) validate() error {
-	if cfg.IpaPath == "" && cfg.PkgPath == "" {
+	if cfg.SkipBinaryUpload == "no" && cfg.IpaPath == "" && cfg.PkgPath == "" {
 		return fmt.Errorf("no IpaPath nor PkgPath parameter specified")
 	}
 
